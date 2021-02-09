@@ -19,12 +19,15 @@ const paths = {
 //Accedemos a las variables definidas de entorno que hemos definido en el package.json
 const development = process.env.NODE_ENV === 'development';
 // Si usamos react-router y subimos nuestra aplicación a producción, habrá que asignar a la variable publicPath la ruta donde se va a alojar el proyecto
-const publicPath = './';
+const productionPath = '/';
+const publicPath = development ? '/' : productionPath;
 
 // Set plugins
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './src/index.html',
   hash: !development,
+  favicon: './src/assets/img/favicon.png',
+
 });
 
 const processEnvPlugin = new webpack.DefinePlugin({
@@ -39,7 +42,7 @@ module.exports = {
   output: {
     path: paths.DIST,
     filename: 'bundle.js',
-    publicPath: '',
+    publicPath,
   },
   module: {
     rules: [
@@ -56,7 +59,7 @@ module.exports = {
         test: /\.(jpg|jpeg|gif|png)$/,
         loader: 'file-loader',
         options: {
-          publicPath: `${publicPath}/statics/images/`,
+          publicPath: `${publicPath}statics/images/`,
           outputPath: './statics/images/',
           name: '[name].[ext]',
         },
@@ -65,7 +68,7 @@ module.exports = {
         test: /\.(wav|mp3)$/,
         loader: 'file-loader',
         options: {
-          publicPath: `${publicPath}/statics/audio/`,
+          publicPath: `${publicPath}statics/audio/`,
           outputPath: './statics/audio/',
           name: '[name].[ext]',
         },
@@ -74,7 +77,7 @@ module.exports = {
         test: /\.(mp4)$/,
         loader: 'file-loader',
         options: {
-          publicPath: `${publicPath}/statics/video/`,
+          publicPath: `${publicPath}statics/video/`,
           outputPath: './statics/video/',
           name: '[name].[ext]',
         },
@@ -83,7 +86,7 @@ module.exports = {
         test: /\.(eot|svg|ttf|woff|woff2|otf)$/,
         loader: 'file-loader',
         options: {
-          publicPath: `${publicPath}/statics/vectors/`,
+          publicPath: `${publicPath}statics/vectors/`,
           outputPath: './statics/vectors/',
           name: '[name].[ext]',
         },
@@ -97,7 +100,7 @@ module.exports = {
     historyApiFallback: true,
     disableHostCheck: true,
     hot: true,
-    port: 8080,
+    port: 8081,
     open: true,
   },
   optimization: {
