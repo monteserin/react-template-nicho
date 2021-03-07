@@ -11,7 +11,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // Constantes con los paths de la aplicación
 const paths = {
   ROOT: path.resolve(__dirname),
-  DIST: path.resolve(__dirname, 'dist'),
+  DIST: path.resolve(__dirname, 'docs'),
   SRC: path.resolve(__dirname, 'src'),
 };
 
