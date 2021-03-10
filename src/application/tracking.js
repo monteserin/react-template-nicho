@@ -7,7 +7,7 @@ export default () => {
     const location = useLocation();
 
     useEffect(() => {
-        ReactGA.initialize('261679733');
+        ReactGA.initialize('UA-19791121-2');
     }, []);
 
     useEffect(() => {
