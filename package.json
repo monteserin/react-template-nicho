@@ -6,7 +6,6 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "start": "cross-env NODE_ENV=development webpack serve",
-    "upload": "node ./bin/upload.js",
     "remove-node_modules": "npx rimraf ./node_modules"
   },
   "author": "Pablo Monteserín",
