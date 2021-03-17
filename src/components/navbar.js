@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
-import { Nav } from '../styled';
+import Link from 'next/link';
+import { Nav } from '../application/styled';
 export default () => <Nav>
     <ul>
-        <li><Link to="/">Sillas de paseo</Link></li>
-        <li><Link to="/sillitas-bebe-coche/">Sillitas de coche</Link></li>
+        <li><Link href="/">Sillas de paseo</Link></li>
+        <li><Link href="/sillitas-bebe-coche/">Sillitas de coche</Link></li>
     </ul>
 </Nav>
