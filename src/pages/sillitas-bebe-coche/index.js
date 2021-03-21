@@ -1,10 +1,14 @@
+import Helmet from 'react-helmet';
 import { H1, H2, Section, Row, Col, AMZ, Bp, Iframe, AMZButton } from '../../application/styled';
 import sillaCoche from '../../assets/img/products/silla-coche-star-baby-travel.jpg';
 import sillaB from '../../assets/img/sliders/silla-bebe-coche.jpg';
 import babyfy from '../../assets/img/products/babify-onboard-cilla de-coche.jpg';
 
 export default () => (
-    <div>
+    <>
+        <Helmet>
+            <title>Sillas de bebé para coche</title>
+        </Helmet>
         <H1 src={sillaB}>Sillitas de bebe para coche</H1>
 
         <Section>
@@ -127,6 +131,6 @@ Babify Onboard Silla de Coche" href="https://www.amazon.es/dp/B07RYWKS9Z/ref=as_
 
         </Section>
 
-    </div >
+    </ >
 
 )

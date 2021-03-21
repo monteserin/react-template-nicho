@@ -1,18 +1,17 @@
 import { useEffect } from 'react';
 import ReactGA from 'react-ga';
-import { useLocation } from 'react-router';
-
+import { useRouter } from 'next/router';
 
 export default () => {
-    const location = useLocation();
+    const { pathname } = useRouter();
 
     useEffect(() => {
         ReactGA.initialize('UA-19791121-2');
     }, []);
 
     useEffect(() => {
-        ReactGA.pageview(location.pathname);
-    }, [location]);
+        ReactGA.pageview(pathname);
+    }, [pathname]);
 
     return null;
 };

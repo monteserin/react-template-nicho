@@ -1,3 +1,4 @@
+import Helmet from 'react-helmet';
 import { H1, H2, H3, Bp, B, Section, AMZ, Iframe, Row, Col, AMZButton } from '../application/styled';
 import sillita from '../assets/img/sliders/bebe-en-sillita.jpg';
 import chiccoLondon from '../assets/img/products/chicco-london-silla-paseo.jpg';
@@ -7,8 +8,11 @@ import buggy from '../assets/img/products/buggy-cybex-silla-paseo.jpg';
 
 
 export default () => (
-  <div>            <H1 src={sillita}>Sillas de paseo para bebés</H1>
-
+  <>
+    <Helmet>
+      <title>Sillas de bebé</title>
+    </Helmet>
+    <H1 src={sillita}>Sillas de paseo para bebés</H1>
     <Section>
       <H2>Por qué necesitas una silla de paseo para bebe</H2>
 
@@ -182,6 +186,6 @@ asegurarse de que siguen así.</p>
       </Row>
 
     </Section>
-  </div >
+  </ >
 
 );
