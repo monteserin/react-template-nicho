@@ -12,7 +12,7 @@ export default () => (
     <Helmet>
       <title>Sillas de bebé</title>
     </Helmet>
-    <H1 src={sillita}>Sillas de paseo para bebés</H1>
+    <H1 src={sillita}>Sillas de paseo para bebésss</H1>
     <Section>
       <H2>Por qué necesitas una silla de paseo para bebe</H2>
 
